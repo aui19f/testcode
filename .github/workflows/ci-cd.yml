@@ -52,3 +52,9 @@ jobs:
           folder: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+                # 6. Firebase Hosting에 배포
+      - name: Deploy to Firebase Hosting
+        run: |
+          echo ${{ secrets.FIREBASE_TOKEN }} | firebase deploy --token
+
